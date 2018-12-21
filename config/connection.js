@@ -1,7 +1,7 @@
 // Setting up MySQL connection.
 var mysql = require("mysql");
 var connection;
-
+// If JAWS DB exists then use this as connection or else use the local instance
 if (process.env.JAWSDB_URL) {
 connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -13,7 +13,6 @@ connection = mysql.createConnection(process.env.JAWSDB_URL);
   database: "burgers_db"
 })
 };
-
 // Connecting to the database.
 connection.connect(function(err) {
   if (err) {
