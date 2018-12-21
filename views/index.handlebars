@@ -11,23 +11,25 @@
         <ul>
             {{#each burgers}}
             {{#unless devoured}}
-            {{devoured=false}}
-            <button class="devour" data-id="{{id}}" data-devoured="true">
-                Devour It!
-            </button>
+            <li>{{burger_name}}
+                <button class="devour" data-id="{{id}}" data-devoured="true">
+                    Devour It!
+                </button>
+            </li>
             {{/unless}}
             {{/each}}
         </ul>
     </div>
-</div>
 
-<div class="row">
     <div class="col-md-6">
         <h2>Burgers that have been devoured!</h2>
 
         <ul>
             {{#each burgers}}
             {{#if devoured}}
+            <li>
+                {{burger_name}}
+            </li>
             {{/if}}
             {{/each}}
         </ul>
@@ -35,59 +37,61 @@
 </div>
 
 <div class="row">
-    <h2>Create Your Own Burger</h2>
-    <form class="create-form">
+    <div class="col-md-12">
+        <h2>Create Your Own Burger</h2>
+        <form class="create-form">
 
-        <div class="form-group">
-            <label for="burger">Burger Name:</label>
-            <input type="text" id="burger" name="name">
-        </div>
+            <div class="form-group">
+                <label for="burger">Burger Name:</label>
+                <input type="text" id="burger" name="name">
+            </div>
 
-        <button type="submit">Add Burger</button>
-    </form>
+            <button type="submit">Add Burger</button>
+        </form>
+    </div>
 </div>
 
 <script>
-    $(function() {
-  $(".devour").on("click", function(event) {
-    var id = $(this).data("id");
-    var eaten = $(this).data("devoured");
+    $(function () {
+        $(".devour").on("click", function (event) {
+            var id = $(this).data("id");
+            var eaten = $(this).data("devoured");
 
-    var newEatenState = {
-      devoured: eaten
-    };
+            var newEatenState = {
+                devoured: eaten
+            };
 
-    // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newEatenState
-    }).then(
-      function() {
-        console.log("Changed devoured to", newEatenState);
-        // Reload the page
-        location.reload();
-      }
-    );
-  });
+            // Send the PUT request.
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: newEatenState
+            }).then(
+                function () {
+                    console.log("Changed devoured to", newEatenState);
+                    // Reload the page
+                    location.reload();
+                }
+            );
+        });
 
-  $(".create-form").on("submit", function(event) {
-    event.preventDefault();
+        $(".create-form").on("submit", function (event) {
+            event.preventDefault();
 
-    var newBurger = {
-      burger_name: $("#burger").val().trim(),
-    };
+            var newBurger = {
+                burger_name: $("#burger").val().trim(),
+            };
 
-    // Send the POST request.
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("New Burger Added");
-        // Reload the page
-        location.reload();
-      }
-    );
-  });
-});
+            // Send the POST request.
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(
+                function () {
+                    console.log("New Burger Added");
+                    // Reload the page
+                    location.reload();
+                }
+            );
+        });
+    });
 </script>
