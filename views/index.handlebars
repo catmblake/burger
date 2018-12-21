@@ -1,7 +1,8 @@
 <div class="row">
     <div class="col-md-12">
         <h1>Welcome to the Burger Lounge!</h1>
-        <h2>Create your own or devour an existing burger creation!</h2>
+        <hr>
+        <h2>Create Your Own Burger or Devour an Existing One!</h2>
     </div>
 </div>
 
@@ -11,25 +12,19 @@
         <ul>
             {{#each burgers}}
             {{#unless devoured}}
-            <li>{{burger_name}}
-                <button class="devour" data-id="{{id}}" data-devoured="true">
-                    Devour It!
-                </button>
-            </li>
+            <li>{{burger_name}}<button class="devour" data-id="{{id}}" data-devoured="true">Devour It!</button></li>
             {{/unless}}
             {{/each}}
         </ul>
     </div>
 
     <div class="col-md-6">
-        <h2>Burgers that have been devoured!</h2>
+        <h2>Burgers Already Devoured!</h2>
 
         <ul>
             {{#each burgers}}
             {{#if devoured}}
-            <li>
-                {{burger_name}}
-            </li>
+            <li>{{burger_name}}</li>
             {{/if}}
             {{/each}}
         </ul>
