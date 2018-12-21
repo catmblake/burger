@@ -50,13 +50,10 @@ var orm = {
       queryString += printQuestionMarks(values.length);
       queryString += `);`;
   
-      console.log(queryString);
-  
       connection.query(queryString, values, function(err, result) {
         if (err) {
           throw err;
         }
-  
         callback(result);
       });
     },
@@ -67,13 +64,11 @@ var orm = {
       queryString += objectToSql(objectColumnValues);
       queryString += ` WHERE `;
       queryString += `${condition};`;
-  
-      console.log(queryString);
+
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
         }
-  
         callback(result);
       });
     },
