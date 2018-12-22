@@ -11,7 +11,7 @@
             <h2>Available Burgers!</h2>
             {{#each burgers}}
             {{#unless devoured}}
-            <p>{{burger_name}}<button class="devour" data-id="{{id}}" data-devoured="true">Devour It!</button></p>
+            <p>{{burger_name}}<button class="btn btn-outline-danger devour" data-id="{{id}}" data-devoured="true">Devour It!</button></p>
             {{/unless}}
             {{/each}}
         </div>
@@ -39,7 +39,7 @@
                 <label for="burger">Burger Name:</label>
                 <input type="text" id="burger" name="name">
             </div>
-            <button type="submit"><img src="assets/img/8060.jpg" alt="burger">Add Burger</button>
+            <button type="submit" class="btn btn-outline-danger"><img src="assets/img/8060.jpg" alt="burger">Add Burger</button>
         </form>
     </div>
     <div class="col-md-3">
