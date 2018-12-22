@@ -70,6 +70,9 @@ img {
     h2 {
         font-size: 24px;
     }
+    .devour {
+        font-size: 12px;
+    }
 }
 @media screen and (max-width: 640px) {
     .jumbotron {
