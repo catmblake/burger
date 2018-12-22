@@ -5,13 +5,14 @@
     </div>
 </div>
 
-<div class="row" id="all-burgers">
+<div class="row">
     <div class="col-md-6">
         <div id="burger-menu">
             <h2>Available Burgers!</h2>
             {{#each burgers}}
             {{#unless devoured}}
-            <p>{{burger_name}}<button class="btn btn-outline-danger devour" data-id="{{id}}" data-devoured="true">Devour It!</button></p>
+            <p>{{burger_name}}<button class="btn btn-outline-danger devour" data-id="{{id}}" data-devoured="true">Devour
+                    It!</button></p>
             {{/unless}}
             {{/each}}
         </div>
