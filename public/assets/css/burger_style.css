@@ -13,10 +13,10 @@ body {
     opacity: 0.8;
     }
 .display-4 {
-    font-size: 4em;
+    font-size: 60px;
 }
 .lead {
-    font-size: 2em;
+    font-size: 36px;
 }
 .row {
     padding: 40px;
@@ -26,10 +26,10 @@ button {
     margin: 10px;
 }
 #burger-menu {
-    padding-right: 10px;
+    padding-right: 20px;
 }
-#eaten-burgers {
-    padding-left: 10px;
+h2 {
+    font-size: 28px;
 }
 #add-burger {
     background: url(../img/form-img.jpg);
@@ -48,4 +48,43 @@ img {
     max-height: 50px;
     border-radius: 10px;
     margin-right: 10px;
+}
+@media screen and (max-width: 992px) {
+    .display-4 {
+        font-size: 48px;
+    }
+    .lead {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .jumbotron {
+        height: 300px;
+    }
+    .display-4 {
+        font-size: 36px;
+    }
+    .lead {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .jumbotron {
+        height: 200px;
+    }
+    .display-4 {
+        font-size: 24px;
+    }
+    .lead {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 12px;
+    }
 }
