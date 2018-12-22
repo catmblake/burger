@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.jumbotron {
+    height: 400px;
+    background: url(../img/burger.jpg);
+    background-size: 100%;
+    margin-bottom: 0px;
+}
+#welcome {
+    text-align: center;
+    background: whitesmoke;
+    opacity: 0.8;
+    }
+.display-4 {
+    font-size: 4em;
+}
+.lead {
+    font-size: 2em;
+}
+.row {
+    padding: 40px;
+}
+#all-burgers{
+
+}
+button {
+    border-radius: 10%;
+    margin: 10px;
+}
+#burger-menu {
+    padding-right: 10px;
+}
+#eaten-burgers {
+    padding-left: 10px;
+}
+#add-burger {
+    background: url(../img/form-img.jpg);
+}
+#burger-form {
+    padding-top: 20px;
+    padding-bottom:20px;
+    text-align: center;
+    background: whitesmoke;
+    opacity: 0.8;
+}
+img {
+    max-height: 50px;
+}

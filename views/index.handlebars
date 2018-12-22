@@ -1,50 +1,51 @@
-<div class="row">
-    <div class="col-md-12">
-        <h1>Welcome to the Burger Lounge!</h1>
-        <hr>
-        <h2>Create Your Own Burger or Devour an Existing One!</h2>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container" id="welcome">
+        <h1 class="display-4">Welcome to the Burger Lounge</h1>
+        <p class="lead">Create Your Own Burger or Devour an Existing One</p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" id="all-burgers">
     <div class="col-md-6">
-        <h2>Available Burgers!</h2>
-        <ul>
+        <div id="burger-menu">
+            <h2>Available Burgers!</h2>
             {{#each burgers}}
             {{#unless devoured}}
-            <li>{{burger_name}}<button class="devour" data-id="{{id}}" data-devoured="true">Devour It!</button></li>
+            <p>{{burger_name}}<button class="devour" data-id="{{id}}" data-devoured="true">Devour It!</button></p>
             {{/unless}}
             {{/each}}
-        </ul>
+        </div>
     </div>
 
     <div class="col-md-6">
-        <h2>Burgers Already Devoured!</h2>
-
-        <ul>
+        <div id="eaten-burgers">
+            <h2>Burgers Already Devoured!</h2>
             {{#each burgers}}
             {{#if devoured}}
-            <li>{{burger_name}}</li>
+            <p>{{burger_name}}</p>
             {{/if}}
             {{/each}}
-        </ul>
+        </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-12">
-        <h2>Create Your Own Burger</h2>
+<div class="row" id="add-burger">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6" id="burger-form">
         <form class="create-form">
-
+            <h3>Create Your Own Burger</h3>
             <div class="form-group">
                 <label for="burger">Burger Name:</label>
                 <input type="text" id="burger" name="name">
             </div>
-
-            <button type="submit">Add Burger</button>
+            <button type="submit"><img src="assets/img/8060.jpg" alt="burger">Add Burger</button>
         </form>
     </div>
+    <div class="col-md-3">
+    </div>
 </div>
+
 
 <script>
     $(function () {
@@ -70,21 +71,21 @@
 
         $(".create-form").on("submit", function (event) {
             event.preventDefault();
-
             var newBurger = {
                 burger_name: $("#burger").val().trim(),
             };
-
-            // Send the POST request.
-            $.ajax("/api/burgers", {
-                type: "POST",
-                data: newBurger
-            }).then(
-                function () {
-                    // Reload the page
-                    location.reload();
-                }
-            );
+            if (newBurger.burger_name) {
+                // Send the POST request.
+                $.ajax("/api/burgers", {
+                    type: "POST",
+                    data: newBurger
+                }).then(
+                    function () {
+                        // Reload the page
+                        location.reload();
+                    }
+                );
+            };
         });
     });
 </script>
