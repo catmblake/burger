@@ -31,5 +31,5 @@ The controller determines all of the routes between server and client and handle
   - Express-Handlebars. This package handles our html templates that are rendered to the client
   - MySQL. The MySQL node.js driver allows us to easily interact with our app's database.
 
-#### Accreditations
+#### Acknowledgements
 Burger Icon: <a href='https://www.freepik.com/free-vector/big-hamburger-icon-graphic-illustration_2631301.htm'>Designed by Rawpixel.com</a>
