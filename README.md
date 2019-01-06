@@ -6,7 +6,7 @@ Eat-Da-Burger! is a restaurant app that lets users input the names of burgers th
 Eat-Da-Burger is deployed with Heroku at: https://burger-lounge-app.herokuapp.com/
 
 ### Under the Burger Bun
-Eat-Da-Burger is designed using the the **M**odel **V**iew **C**ontroller mothodology. 
+Eat-Da-Burger is designed using the the **M**odel **V**iew **C**ontroller methodology. 
 * **Model**
 The model consists of a homemade orm which includes the burger's three key methods:
   1. selectAll - This method queries the database and retrieves all of the burgers, then displays them on the page.
